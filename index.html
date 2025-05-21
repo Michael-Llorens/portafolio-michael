@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio profesional de Michael Llorens, desarrollador Full Stack especializado en aplicaciones web y móviles">
+    <title>Michael Llorens - Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon (añade tu favicon en la carpeta img) -->
+    <!-- <link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <div class="container">
+        <!-- Header / Profile Section -->
+        <header class="profile">
+            <div class="profile-image">
+                <img src="img/Foto-Michael.jpg" alt="Foto de perfil de Michael Llorens" id="profilePic">
+            </div>
+            <div class="profile-info">
+                <h1>Michael Llorens Barbera</h1>
+                <p class="subtitle">Full Stack Developer | Android & Web Developer</p>
+                <div class="location">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span>España, Valencia</span>
+                </div>
+                <div class="contact-links">
+                    <a href="https://mail.google.com/mail/?view=cm&to=michaelllorens87@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Enviar email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span class="email-text">Michaelllorens87@gmail.com</span>
+                    </a>
+                    <a href="Michael-CV-5-2025.pdf" class="btn btn-outline" aria-label="Ver CV">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Michael-Llorens" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Perfil de GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/michael-llorens-barbera-32b9272b3/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Perfil de LinkedIn">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Enlarged image (popup) -->
+        <div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+            <span id="closePopup" class="close" aria-label="Cerrar">&times;</span>
+            <img src="img/Foto-Michael.jpg" alt="Foto ampliada de Michael Llorens" class="popup-img">
+        </div>
+
+        <!-- About Me Section -->
+        <section class="about separating-line">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy Michael Llorens Barberá, desarrollador Full Stack con formación en Desarrollo de Aplicaciones Multiplataforma. Cuento con experiencia en desarrollo web y móvil, trabajando con tecnologías como Java, Kotlin, PHP, Firebase, Spring Boot, HTML, CSS, JavaScript y bases de datos MySQL, lo que me permite crear aplicaciones sólidas y completas.
+            </p>
+            <p>
+                Entre mis habilidades técnicas, destaco la capacidad para manejar programación concurrente y comunicación cliente-servidor, adquirida al desarrollar sistemas que gestionan múltiples usuarios simultáneos, garantizando la integridad y consistencia de los datos en tiempo real.
+            </p>
+            <p>
+                También tengo experiencia en integración de APIs externas y programación en Python para entornos de gestión empresarial como Odoo, aportando soluciones adaptadas a las necesidades del negocio. Me apasiona desarrollar software eficiente, mantenible y centrado en ofrecer una excelente experiencia de usuario.
+            </p>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="technologies">
+            <h2>Tecnologías</h2>
+            <div class="tech-badges">
+                <span class="badge"><i class="fa-brands fa-java" aria-hidden="true"></i> Java</span>
+                <span class="badge"><i class="fa-solid fa-k" aria-hidden="true"></i> Kotlin</span>
+                <span class="badge"><i class="fa-brands fa-android" aria-hidden="true"></i> Android</span>
+                <span class="badge"><i class="fa-brands fa-php" aria-hidden="true"></i> PHP</span>
+                <span class="badge"><i class="fa-solid fa-fire" aria-hidden="true"></i> Firebase</span>
+                <span class="badge"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Spring Boot</span>
+                <span class="badge"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML</span>
+                <span class="badge"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS</span>
+                <span class="badge"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</span>
+                <span class="badge"><i class="fa-solid fa-cubes" aria-hidden="true"></i> Qt</span>
+                <span class="badge"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+                <span class="badge"><i class="fa-solid fa-cube" aria-hidden="true"></i> Odoo</span>
+                <span class="badge"><i class="fa-solid fa-database" aria-hidden="true"></i> MySQL</span>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <h2>Experiencia</h2>
+
+            <!-- Freelance -->
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Freelance</h3>
+                            <p class="job-title">Desarrollador Web</p>
+                        </div>
+                        <span class="date-badge">Ago 2023 - Actualidad</span>
+                    </div>
+                    <p class="job-description">
+                        Creación de sitios web para clientes particulares, desarrollando interfaces modernas y funcionalidad backend personalizada. Trabajo con HTML, CSS, JavaScript, PHP y MySQL.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ecommalia -->
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fa-solid fa-building" aria-hidden="true"></i>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Ecommalia</h3>
+                            <p class="job-title">Desarrollador Web en Prácticas</p>
+                        </div>
+                        <span class="date-badge">Ene 2024 - Jun 2024</span>
+                    </div>
+                    <p class="job-description">
+                        Realicé tareas de desarrollo y mantenimiento en sitios web basados en Prestashop y WordPress, seleccionando e instalando módulos personalizados según las necesidades, y gestionando la actualización de datos en sistemas como Odoo y Amazon para mejorar la gestión de ventas y la experiencia del usuario.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Proyectos</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Proyecto anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                
+                <ul class="carousel" id="projectCarousel">
+                    <li class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-brands fa-android" aria-hidden="true"></i></div>
+                                <div>
+                                    <h3>GoodFood</h3>
+                                </div>
+                            </div>
+                            <p class="project-description">GoodFood es una app de recetas donde los usuarios pueden descubrir, compartir y gestionar platos fácilmente. Permite filtrar por origen, editar recetas y muestra información nutricional gracias a la API de Open Food Facts.</p>
+                            <div class="project-tags">
+                                <span class="badge"><i class="fa-brands fa-android" aria-hidden="true"></i> </span>
+                                <span class="badge"><i class="fa-solid fa-fire" aria-hidden="true"></i> </span>
+                                <span class="badge"><i class="fa-solid fa-k" aria-hidden="true"></i> </span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Michael-Llorens/GoodFood" class="btn btn-small btn-outline" aria-label="Enlace al proyecto"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="img/goodfood.png" alt="Captura de pantalla de la aplicación GoodFood">
+                        </div>
+                    </li>
+
+                    <li class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-film" aria-hidden="true"></i></div>
+                                <div>
+                                    <h3>Venta de entradas</h3>
+                                </div>
+                            </div>
+                            <p class="project-description">Proyecto que simula un sistema de reservas de cine, desarrollado en Java. Implementa comunicación cliente-servidor mediante sockets, mostrando la lógica de gestión de plazas y concurrencia de usuarios.</p>
+                            <div class="project-tags">
+                                <span class="badge"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Michael-Llorens/Pryecte_Cine_Servlets/tree/main" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline" aria-label="Ver código en GitHub"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="img/kinepolis.jpg" alt="Imagen del proyecto de venta de entradas de cine">
+                        </div>
+                    </li>
+
+                    <li class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+                                <div>
+                                    <h3>Juego de robots</h3>
+                                </div>
+                            </div>
+                            <p class="project-description">Juego de robots desarrollado en Odoo utilizando Python, con implementación de lambdas, tareas cron programadas y herencia de modelos como res.partner para integrar funcionalidades avanzadas del ERP.</p>
+                            <div class="project-tags">
+                                <span class="badge"><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa-solid fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Michael-Llorens/Robot-game-in-odoo" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline" aria-label="Ver código en GitHub"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="img/odoo.png" alt="Captura de pantalla del juego de robots en Odoo">
+                        </div>
+                    </li>
+
+                    <li class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <div class="project-icon"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></div>
+                                <div>
+                                    <h3>Juego de las bolas</h3>
+                                </div>
+                            </div>
+                            <p class="project-description">Juego desarrollado en Qt donde el jugador controla una bola que debe esquivar otras bolas en movimiento. El objetivo es sobrevivir el mayor tiempo posible, mejorando reflejos y coordinación.</p>
+                            <div class="project-tags">
+                                <span class="badge"><i class="fa-solid fa-cubes" aria-hidden="true"></i></span>
+                                <span class="badge"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Michael-Llorens/QT-balls-game" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline" aria-label="Ver código en GitHub"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <img src="img/juego-bolass.png" alt="Captura de pantalla del juego de bolas en Qt">
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="carousel-btn next" aria-label="Proyecto siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education">
+            <h2>Estudios</h2>
+
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                            <p class="job-title">I.E.S. Lluis Simarro (Xátiva)</p>
+                        </div>
+                        <span class="date-badge">Sep 2022 – Jun 2024</span>
+                    </div>
+                    <p class="job-description">
+                        Formación especializada en desarrollo de software, abarcando programación en Java, Kotlin, Python, HTML, CSS, JavaScript y PHP. Desarrollo de aplicaciones móviles con Android Studio, diseño de interfaces gráficas con Qt, gestión de bases de datos con MySQL y SQLite, uso de APIs y frameworks como Spring Boot, así como experiencia práctica con herramientas como Firebase y Odoo.
+                    </p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="experience-content">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Grado Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+                            <p class="job-title">I.E.S. Lluis Simarro (Xátiva)</p>
+                        </div>
+                        <span class="date-badge">Actualidad</span>
+                    </div>
+                    <p class="job-description">
+                        Formación integral en el desarrollo y mantenimiento de aplicaciones web, abarcando lenguajes y tecnologías clave como HTML, CSS, JavaScript, PHP y bases de datos. Incluye el diseño de interfaces, programación backend, gestión de servidores y despliegue de aplicaciones, con énfasis en la calidad, seguridad y experiencia de usuario.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Michael Llorens. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://github.com/Michael-Llorens" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/michael-llorens-barbera-32b9272b3/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
