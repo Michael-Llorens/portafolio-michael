@@ -30,6 +30,19 @@
   --transition-normal: 0.3s ease;
 }
 
+.light-theme {
+  --primary-color: #172e7c;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e3a8a;
+  --primary-bg: rgba(30, 64, 175, 0.1); /* más suave en fondo claro */
+  --text-primary: #0f172a; /* Slate 900 */
+  --text-secondary: #1e3a8a; /* Blue 900 */
+  --text-muted: #64748b; /* Slate 500 */
+  --bg-dark: #000000;
+  --bg-card: rgba(241, 245, 249, 0.7); /* Slate 100 con opacidad */
+  --border-color: rgba(30, 64, 175, 0.3); /* menos opaco para fondo claro */
+}
+
 /* Reset y estilos base */
 * {
   margin: 0;
@@ -254,7 +267,7 @@ a:focus-visible {
 }
 
 .experience-item:hover .experience-icon {
-  background-color: var(--primary-color);
+  background-color: var(--primary-bg);
 }
 
 .experience-content {
@@ -408,7 +421,7 @@ a:focus-visible {
 }
 
 .project-card:hover .project-icon {
-  background-color: var(--primary-color);
+  background-color: var(--primary-bg);
 }
 
 .project-description {
@@ -552,6 +565,192 @@ a:focus-visible {
 }
 
 /* ============================
+   CONTROLES DE TEMA E IDIOMA
+=============================== */
+:root {
+  /* Variables para tema claro */
+  --light-bg: #f8fafc;
+  --light-text-primary: #1e293b;
+  --light-text-secondary: #121e48;
+  --light-text-muted: #64748b;
+  --light-bg-card: rgba(226, 232, 240, 0.5);
+  --light-border-color: rgba(30, 64, 175, 0.3);
+}
+
+/* Clase para tema claro */
+body.light-theme {
+  background-color: var(--light-bg);
+  color: var(--light-text-primary);
+}
+
+body.light-theme .badge,
+body.light-theme .btn-primary,
+body.light-theme .experience-icon,
+body.light-theme .project-icon,
+body.light-theme .date-badge,
+body.light-theme .carousel-btn {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+}
+
+body.light-theme .project-card {
+  background-color: var(--light-bg-card);
+  border-color: var(--light-border-color);
+}
+
+body.light-theme .project-description,
+body.light-theme .job-description {
+  color: var(--bg-dark);
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+  color: var(--light-text-primary);
+}
+
+body.light-theme .subtitle,
+body.light-theme .location,
+body.light-theme .job-title {
+  color: var(--light-text-secondary);
+}
+
+body.light-theme .footer {
+  color: var(--light-text-secondary);
+  border-color: var(--light-border-color);
+}
+
+body.light-theme .separating-line {
+  border-color: var(--light-border-color);
+}
+
+/* Controles de configuración */
+.settings-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+  flex-direction: row-reverse;
+}
+
+/* Botón de tema */
+.theme-toggle {
+  background-color: var(--primary-bg);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+body.light-theme .theme-toggle {
+  background-color: var(--primary-light);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Selector de idioma */
+.language-selector {
+  position: relative;
+}
+
+.language-toggle {
+  background-color: var(--primary-bg);
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.language-toggle:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+body.light-theme .language-toggle {
+  background-color: var(--primary-light);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 5px;
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .language-dropdown {
+  background-color: white;
+  border-color: var(--light-border-color);
+}
+
+.language-dropdown.show {
+  display: flex;
+}
+
+.language-dropdown button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background-color 0.2s;
+}
+
+body.light-theme .language-dropdown button {
+  color: var(--light-text-primary);
+}
+
+.language-dropdown button:hover {
+  background-color: var(--primary-bg);
+}
+
+.language-dropdown button.active {
+  background-color: var(--primary-bg);
+  color: var(--text-secondary);
+}
+
+body.light-theme .language-dropdown button.active {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+}
+
+/* Transición suave para cambio de tema */
+body, 
+body *:not(script) {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ============================
    MEDIA QUERIES PARA RESPONSIVIDAD
 =============================== */
 /* Tablets y pantallas medianas */
@@ -575,6 +774,17 @@ a:focus-visible {
   .project-card {
     flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
+  }
+
+  .settings-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
 }
 
@@ -628,6 +838,17 @@ a:focus-visible {
   .btn-primary {
     padding: 0.5rem;
   }
+
+  .settings-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
 }
 
 /* Pantallas muy pequeñas */
@@ -643,5 +864,16 @@ a:focus-visible {
   
   .badge {
     padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .settings-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
 }
