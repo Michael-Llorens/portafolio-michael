@@ -231,4 +231,105 @@ function initCarousel() {
             behavior: 'auto'
         });
     });
+
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    // Detectar click en el botón de tema
+    themeToggleBtn.addEventListener('click', () => {
+            // Si tiene la clase fa-moon, la cambia a fa-sun, si no, al revés
+            if (themeIcon.classList.contains('fa-moon')) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            body.classList.add('light-theme');
+            } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            body.classList.remove('light-theme');
+            }
+    });
+
+    const languageToggleBtn = document.getElementById('language-toggle');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageButtons = languageDropdown.querySelectorAll('button[data-lang]');
+    const currentLangSpan = document.getElementById('current-lang');
+
+    // Idioma actual desde localStorage o 'es' por defecto
+    let currentLang = localStorage.getItem('lang') || 'es';
+    currentLangSpan.textContent = currentLang.toUpperCase();
+
+    // Función para aplicar las traducciones
+    async function applyTranslations(lang) {
+        try {
+            const response = await fetch('i18n.json');
+            const translations = await response.json();
+
+            if (!translations[lang]) {
+                console.warn(`Traducciones no encontradas para el idioma: ${lang}`);
+                return;
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Actualiza el texto del selector
+            currentLangSpan.textContent = lang.toUpperCase();
+        } catch (err) {
+            console.error("Error cargando traducciones:", err);
+        }
+    }
+
+    // Mostrar/Ocultar dropdown
+    languageToggleBtn.addEventListener('click', () => {
+        languageDropdown.style.display = languageDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar dropdown si haces click fuera de él
+    document.addEventListener('click', (e) => {
+    // Si el dropdown está abierto y el click no fue dentro del dropdown ni en el botón
+    if (languageDropdown.style.display === 'block' && 
+        !languageDropdown.contains(e.target) && 
+        e.target !== languageToggleBtn && 
+        !languageToggleBtn.contains(e.target)) {
+        languageDropdown.style.display = 'none';
+    }
+    });
+
+    // Detectar selección de idioma
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedLang = button.getAttribute('data-lang').toLowerCase();
+
+            // Guardar idioma en localStorage
+            localStorage.setItem('lang', selectedLang);
+            currentLang = selectedLang;
+
+            // Aplicar traducciones
+            applyTranslations(currentLang);
+
+            // Actualizar clase activa
+            languageButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Cerrar el dropdown
+            languageDropdown.style.display = 'none';
+        });
+    });
+
+    // Al cargar la página, aplicar idioma guardado
+    applyTranslations(currentLang);
+
+    // Marcar el botón del idioma actual como activo
+    languageButtons.forEach(button => {
+        if (button.getAttribute('data-lang').toLowerCase() === currentLang) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
 }
