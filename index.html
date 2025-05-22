@@ -9,7 +9,7 @@
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Favicon (añade tu favicon en la carpeta img) -->
-    <!-- <link rel="icon" href="img/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -18,9 +18,28 @@
             <div class="profile-image">
                 <img src="img/Foto-Michael.jpg" alt="Foto de perfil de Michael Llorens" id="profilePic">
             </div>
+            <!-- Controles de tema e idioma -->
+            <div class="settings-controls">
+                <!-- Selector de tema -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                
+                <!-- Selector de idioma -->
+                <div class="language-selector">
+                    <button id="language-toggle" class="language-toggle" aria-label="Cambiar idioma">
+                        <span id="current-lang">ES</span>
+                        <i class="fa-solid fa-globe"></i>
+                    </button>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <button data-lang="ES" class="active">Español</button>
+                        <button data-lang="EN">English</button>
+                    </div>
+                </div>
+            </div>
             <div class="profile-info">
-                <h1>Michael Llorens Barbera</h1>
-                <p class="subtitle">Full Stack Developer | Android & Web Developer</p>
+                <h1 data-i18n="nombre">Michael Llorens Barbera</h1>
+                <p class="subtitle" data-i18n="profesion">Full Stack Developer | Android & Web Developer</p>
                 <div class="location">
                     <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     <span>España, Valencia</span>
@@ -30,7 +49,7 @@
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         <span class="email-text">Michaelllorens87@gmail.com</span>
                     </a>
-                    <a href="Michael-CV-5-2025.pdf" class="btn btn-outline" aria-label="Ver CV">
+                    <a href="Michael-CV-2025.pdf" class="btn btn-outline" aria-label="Ver CV">
                         <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
                     </a>
                     <a href="https://github.com/Michael-Llorens" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Perfil de GitHub">
@@ -51,21 +70,21 @@
 
         <!-- About Me Section -->
         <section class="about separating-line">
-            <h2>Sobre mí</h2>
-            <p>
-                Soy Michael Llorens Barbera, desarrollador Full Stack con formación en Desarrollo de Aplicaciones Multiplataforma. Cuento con experiencia en desarrollo web y móvil, trabajando con tecnologías como Java, Kotlin, PHP, Firebase, Spring Boot, HTML, CSS, JavaScript y bases de datos MySQL, lo que me permite crear aplicaciones sólidas y completas.
+            <h2 data-i18n="sobre_mi_titulo">Sobre mí</h2>
+            <p data-i18n="sobre_mi_texto1">
+                Soy Michael Llorens Barberá, desarrollador Full Stack con formación en Desarrollo de Aplicaciones Multiplataforma. Cuento con experiencia en desarrollo web y móvil, trabajando con tecnologías como Java, Kotlin, PHP, Firebase, Spring Boot, HTML, CSS, JavaScript y bases de datos MySQL, lo que me permite crear aplicaciones sólidas y completas.
             </p>
-            <p>
+            <p data-i18n="sobre_mi_texto2">
                 Entre mis habilidades técnicas, destaco la capacidad para manejar programación concurrente y comunicación cliente-servidor, adquirida al desarrollar sistemas que gestionan múltiples usuarios simultáneos, garantizando la integridad y consistencia de los datos en tiempo real.
             </p>
-            <p>
+            <p data-i18n="sobre_mi_texto3">
                 También tengo experiencia en integración de APIs externas y programación en Python para entornos de gestión empresarial como Odoo, aportando soluciones adaptadas a las necesidades del negocio. Me apasiona desarrollar software eficiente, mantenible y centrado en ofrecer una excelente experiencia de usuario.
             </p>
         </section>
 
         <!-- Technologies Section -->
         <section class="technologies">
-            <h2>Tecnologías</h2>
+            <h2 data-i18n="tecnologias_titulo">Tecnologías</h2>
             <div class="tech-badges">
                 <span class="badge"><i class="fa-brands fa-java" aria-hidden="true"></i> Java</span>
                 <span class="badge"><i class="fa-solid fa-k" aria-hidden="true"></i> Kotlin</span>
@@ -85,7 +104,7 @@
 
         <!-- Experience Section -->
         <section class="experience">
-            <h2>Experiencia</h2>
+            <h2 data-i18n="experiencia_titulo">Experiencia</h2>
 
             <!-- Freelance -->
             <div class="experience-item">
@@ -96,11 +115,11 @@
                     <div class="experience-header">
                         <div>
                             <h3>Freelance</h3>
-                            <p class="job-title">Desarrollador Web</p>
+                            <p class="job-title" data-i18n="experiencia_puesto_freelance">Desarrollador Web</p>
                         </div>
-                        <span class="date-badge">Ago 2023 - Actualidad</span>
+                        <span class="date-badge" data-i18n="experiencia_fecha_freelance">Agosto 2023 - Actualidad</span>
                     </div>
-                    <p class="job-description">
+                    <p class="job-description" data-i18n="experiencia_descripcion_freelance">
                         Creación de sitios web para clientes particulares, desarrollando interfaces modernas y funcionalidad backend personalizada. Trabajo con HTML, CSS, JavaScript, PHP y MySQL.
                     </p>
                 </div>
@@ -115,11 +134,11 @@
                     <div class="experience-header">
                         <div>
                             <h3>Ecommalia</h3>
-                            <p class="job-title">Desarrollador Web en Prácticas</p>
+                            <p class="job-title" data-i18n="experiencia_puesto_ecommalia">Desarrollador Web en Prácticas</p>
                         </div>
-                        <span class="date-badge">Ene 2024 - Jun 2024</span>
+                        <span class="date-badge" data-i18n="experiencia_fecha_ecommalia">Marzo 2024 - Agosto 2024</span>
                     </div>
-                    <p class="job-description">
+                    <p class="job-description" data-i18n="experiencia_descripcion_ecommalia">
                         Realicé tareas de desarrollo y mantenimiento en sitios web basados en Prestashop y WordPress, seleccionando e instalando módulos personalizados según las necesidades, y gestionando la actualización de datos en sistemas como Odoo y Amazon para mejorar la gestión de ventas y la experiencia del usuario.
                     </p>
                 </div>
@@ -128,7 +147,7 @@
 
         <!-- Projects Section -->
         <section class="projects">
-            <h2>Proyectos</h2>
+            <h2 data-i18n="proyectos_titulo">Proyectos</h2>
             
             <div class="carousel-container">
                 <button class="carousel-btn prev" aria-label="Proyecto anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
@@ -142,7 +161,7 @@
                                     <h3>GoodFood</h3>
                                 </div>
                             </div>
-                            <p class="project-description">GoodFood es una app de recetas donde los usuarios pueden descubrir, compartir y gestionar platos fácilmente. Permite filtrar por origen, editar recetas y muestra información nutricional gracias a la API de Open Food Facts.</p>
+                            <p class="project-description" data-i18n="proyecto_goodfood_descripcion">GoodFood es una app de recetas donde los usuarios pueden descubrir, compartir y gestionar platos fácilmente. Permite filtrar por origen, editar recetas y muestra información nutricional gracias a la API de Open Food Facts.</p>
                             <div class="project-tags">
                                 <span class="badge"><i class="fa-brands fa-android" aria-hidden="true"></i> </span>
                                 <span class="badge"><i class="fa-solid fa-fire" aria-hidden="true"></i> </span>
@@ -162,10 +181,10 @@
                             <div class="project-header">
                                 <div class="project-icon"><i class="fa-solid fa-film" aria-hidden="true"></i></div>
                                 <div>
-                                    <h3>Venta de entradas</h3>
+                                    <h3>kinepolis</h3>
                                 </div>
                             </div>
-                            <p class="project-description">Proyecto que simula un sistema de reservas de cine, desarrollado en Java. Implementa comunicación cliente-servidor mediante sockets, mostrando la lógica de gestión de plazas y concurrencia de usuarios.</p>
+                            <p class="project-description" data-i18n="proyecto_kinepolis_descripcion">Proyecto que simula un sistema de reservas de cine, desarrollado en Java. Implementa comunicación cliente-servidor mediante sockets, mostrando la lógica de gestión de plazas y concurrencia de usuarios.</p>
                             <div class="project-tags">
                                 <span class="badge"><i class="fa-brands fa-java" aria-hidden="true"></i></span>
                                 <span class="badge"><i class="fa-brands fa-html5" aria-hidden="true"></i></span>
@@ -188,7 +207,7 @@
                                     <h3>Juego de robots</h3>
                                 </div>
                             </div>
-                            <p class="project-description">Juego de robots desarrollado en Odoo utilizando Python, con implementación de lambdas, tareas cron programadas y herencia de modelos como res.partner para integrar funcionalidades avanzadas del ERP.</p>
+                            <p class="project-description" data-i18n="proyecto_robots_descripcion">Juego de robots desarrollado en Odoo utilizando Python, con implementación de lambdas, tareas cron programadas y herencia de modelos como res.partner para integrar funcionalidades avanzadas del ERP.</p>
                             <div class="project-tags">
                                 <span class="badge"><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
                                 <span class="badge"><i class="fa-brands fa-python" aria-hidden="true"></i></span>
@@ -211,7 +230,7 @@
                                     <h3>Juego de las bolas</h3>
                                 </div>
                             </div>
-                            <p class="project-description">Juego desarrollado en Qt donde el jugador controla una bola que debe esquivar otras bolas en movimiento. El objetivo es sobrevivir el mayor tiempo posible, mejorando reflejos y coordinación.</p>
+                            <p class="project-description" data-i18n="proyecto_bolas_descripcion">Juego desarrollado en Qt donde el jugador controla una bola que debe esquivar otras bolas en movimiento. El objetivo es sobrevivir el mayor tiempo posible, mejorando reflejos y coordinación.</p>
                             <div class="project-tags">
                                 <span class="badge"><i class="fa-solid fa-cubes" aria-hidden="true"></i></span>
                                 <span class="badge"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
@@ -232,7 +251,7 @@
 
         <!-- Education Section -->
         <section class="education">
-            <h2>Estudios</h2>
+            <h2 data-i18n="estudios_titulo">Estudios</h2>
 
             <div class="experience-item">
                 <div class="experience-icon">
@@ -241,12 +260,12 @@
                 <div class="experience-content">
                     <div class="experience-header">
                         <div>
-                            <h3>Grado Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+                            <h3 data-i18n="estudios_titulacion_daw">Grado Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
                             <p class="job-title">I.E.S. Lluis Simarro (Xátiva)</p>
                         </div>
-                        <span class="date-badge">Actualidad</span>
+                        <span class="date-badge" data-i18n="estudios_fecha_daw">Actualidad</span>
                     </div>
-                    <p class="job-description">
+                    <p class="job-description" data-i18n="estudios_descripcion_daw">
                         Formación integral en el desarrollo y mantenimiento de aplicaciones web, abarcando lenguajes y tecnologías clave como HTML, CSS, JavaScript, PHP y bases de datos. Incluye el diseño de interfaces, programación backend, gestión de servidores y despliegue de aplicaciones, con énfasis en la calidad, seguridad y experiencia de usuario.
                     </p>
                 </div>
@@ -259,12 +278,12 @@
                 <div class="experience-content">
                     <div class="experience-header">
                         <div>
-                            <h3>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                            <h3 data-i18n="estudios_titulacion_dam">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
                             <p class="job-title">I.E.S. Lluis Simarro (Xátiva)</p>
                         </div>
-                        <span class="date-badge">Sep 2022 – Jun 2024</span>
+                        <span class="date-badge" data-i18n="estudios_tiempo_dam">Sepiembre 2022 – Julio 2024</span>
                     </div>
-                    <p class="job-description">
+                    <p class="job-description" data-i18n="estudios_descripcion_dam">
                         Formación especializada en desarrollo de software, abarcando programación en Java, Kotlin, Python, HTML, CSS, JavaScript y PHP. Desarrollo de aplicaciones móviles con Android Studio, diseño de interfaces gráficas con Qt, gestión de bases de datos con MySQL y SQLite, uso de APIs y frameworks como Spring Boot, así como experiencia práctica con herramientas como Firebase y Odoo.
                     </p>
                 </div>
@@ -273,7 +292,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2025 Michael Llorens. Todos los derechos reservados.</p>
+            <p data-i18n="footer">&copy; 2025 Michael Llorens. Todos los derechos reservados.</p>
             <div class="social-links">
                 <a href="https://github.com/Michael-Llorens" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/michael-llorens-barbera-32b9272b3/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
